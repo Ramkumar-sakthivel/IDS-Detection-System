@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #394854;
+            color: white;
+            padding: 40px;
+        }
+        .card {
+            background-color: #a9acaa;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,255,0,0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .badge-success {
+            background-color: #00ff88;
+        }
+        .badge-danger {
+            background-color: #ff4d4d;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .metric {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2 class="mb-4">🖥️ SOC Threat Monitoring Dashboard</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card p-4">
+            <div class="metric">Total Records</div>
+            <h3>{{ total }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4">
+            <div class="metric text-success">Normal Traffic</div>
+            <h3>{{ normal_count }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4">
+            <div class="metric text-danger">Attack Traffic</div>
+            <h3>{{ attack_count }}</h3>
+        </div>
+    </div>
+
+</div>
+
+<br>
+
+<div class="card p-4 mt-4">
+
+    {% if attack_count > 0 %}
+        <span class="badge badge-danger p-3">🚨 Threat Detected</span>
+    {% else %}
+        <span class="badge badge-success p-3">✅ System Secure</span>
+    {% endif %}
+
+    <br><br>
+
+    <div class="progress" style="height: 25px;">
+        <div class="progress-bar bg-danger"
+             role="progressbar"
+             style="width: {{ attack_percent }}%;">
+             {{ attack_percent }}% Attack Traffic
+        </div>
+    </div>
+
+</div>
+
+{% if accuracy %}
+<div class="card p-4 mt-4">
+    <h4>Model Evaluation</h4>
+    Accuracy: {{ accuracy }}
+    <br>
+    Confusion Matrix: {{ cm }}
+</div>
+{% endif %}
+
+<br>
+<a href="/" class="btn btn-outline-light">Analyze Another File</a>
+
+</body>
+</html>
