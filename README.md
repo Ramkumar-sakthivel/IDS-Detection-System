@@ -1,6 +1,6 @@
-# 🛡️ Intrusion Detection System (IDS) using XGBoost
+#  Intrusion Detection System (IDS) using XGBoost
 
-## 📌 Overview
+##  Overview
 
 This project implements a **Machine Learning-based Intrusion Detection System (IDS)** using flow-based network features.
 It detects malicious network traffic and classifies it as **Normal** or **Attack** using an optimized XGBoost model.
@@ -9,7 +9,7 @@ A **SOC-style dashboard** is built using Flask to visualize detection results in
 
 ---
 
-## 🚀 Features
+##  Features
 
 * Flow-based intrusion detection
 * High accuracy classification using XGBoost
@@ -20,7 +20,7 @@ A **SOC-style dashboard** is built using Flask to visualize detection results in
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 The model is trained on the **CICIDS2017 dataset**, which contains real-world network traffic including multiple attack types.
 
@@ -37,7 +37,7 @@ The model is trained on the **CICIDS2017 dataset**, which contains real-world ne
 
 ---
 
-## 🧠 Model Details
+##  Model Details
 
 * Algorithm: **XGBoost Classifier**
 * Handling Imbalance: `scale_pos_weight`
@@ -52,7 +52,7 @@ The model is trained on the **CICIDS2017 dataset**, which contains real-world ne
 
 ---
 
-## ⚙️ Project Structure
+##  Project Structure
 
 ```
 IDS-Detection-System/
@@ -75,7 +75,7 @@ IDS-Detection-System/
 
 ---
 
-## 🖥️ Web Dashboard
+##  Web Dashboard
 
 A **Security Operations Center (SOC)-style dashboard** is implemented using Flask.
 
@@ -122,15 +122,15 @@ Test_File/demo_test_flows.csv
 
 ---
 
-##  Important Note
+## ⚠️ Important Note
 
 The model works on **flow-based features**, not raw packet data.
 
-###  Not Supported:
+### ❌ Not Supported:
 
 * Wireshark CSV (packet-level data)
 
-###  Supported:
+### ✅ Supported:
 
 * Flow feature CSV (like CICIDS format)
 
@@ -151,7 +151,8 @@ A synthetic dataset (`demo_test_flows.csv`) is included for demonstration purpos
 
 ---
 
-## Future Improvements
+
+##  Future Improvements
 
 * Real-time traffic monitoring
 * PCAP → Flow feature conversion
@@ -160,6 +161,6 @@ A synthetic dataset (`demo_test_flows.csv`) is included for demonstration purpos
 
 ---
 
-## 🔗 Keywords
+##  Keywords
 
 Intrusion Detection System, Machine Learning, XGBoost, Cybersecurity, Network Security, SOC Dashboard
